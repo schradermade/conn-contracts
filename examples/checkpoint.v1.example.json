@@ -1,0 +1,6 @@
+{
+  "tenant_id": "default",
+  "source": "gdrive",
+  "cursor": "start-page-token-12345",
+  "updated_at": "2026-02-25T20:40:00Z"
+}

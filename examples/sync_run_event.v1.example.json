@@ -1,0 +1,13 @@
+{
+  "run_id": "run-20260225-001",
+  "tenant_id": "default",
+  "source": "gdrive",
+  "run_type": "incremental",
+  "status": "completed",
+  "emitted_count": 128,
+  "deleted_count": 2,
+  "failed_count": 0,
+  "error_code": null,
+  "error_message": null,
+  "ts": "2026-02-25T20:40:00Z"
+}

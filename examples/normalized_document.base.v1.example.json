@@ -1,0 +1,17 @@
+{
+  "doc_id": "drive-file-88",
+  "source": "gdrive",
+  "object_type": "file",
+  "title": "Budget.xlsx",
+  "content": "Q4 budget forecast and assumptions",
+  "content_pointer": null,
+  "url": "https://drive.google.com/file/d/drive-file-88/view",
+  "updated_at": "2026-02-25T20:35:00Z",
+  "source_acl_principals": ["user:cfo@company.com", "group:finance-team"],
+  "sync_run_id": "run-20260225-001",
+  "checksum": "sha256:abc123",
+  "is_deleted": false,
+  "raw_metadata": {
+    "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  }
+}
