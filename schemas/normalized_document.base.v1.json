@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "normalized_document.base.v1",
+  "title": "NormalizedDocumentBaseV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "doc_id",
+    "source",
+    "object_type",
+    "updated_at",
+    "source_acl_principals",
+    "sync_run_id",
+    "is_deleted"
+  ],
+  "properties": {
+    "doc_id": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "object_type": { "type": "string", "minLength": 1 },
+    "title": { "type": ["string", "null"] },
+    "content": { "type": ["string", "null"] },
+    "content_pointer": { "type": ["string", "null"] },
+    "url": { "type": ["string", "null"] },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "source_acl_principals": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sync_run_id": { "type": "string", "minLength": 1 },
+    "checksum": { "type": ["string", "null"] },
+    "is_deleted": { "type": "boolean" },
+    "raw_metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "is_deleted": { "const": false } },
+        "required": ["is_deleted"]
+      },
+      "then": {
+        "anyOf": [
+          { "required": ["content"] },
+          { "required": ["content_pointer"] }
+        ]
+      }
+    }
+  ]
+}

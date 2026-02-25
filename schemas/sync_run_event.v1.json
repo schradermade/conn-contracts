@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sync_run_event.v1",
+  "title": "SyncRunEventV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "tenant_id", "source", "run_type", "status", "ts"],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1 },
+    "tenant_id": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 },
+    "run_type": { "type": "string", "enum": ["full", "incremental"] },
+    "status": { "type": "string", "enum": ["started", "completed", "failed"] },
+    "emitted_count": { "type": "integer", "minimum": 0 },
+    "deleted_count": { "type": "integer", "minimum": 0 },
+    "failed_count": { "type": "integer", "minimum": 0 },
+    "error_code": { "type": ["string", "null"] },
+    "error_message": { "type": ["string", "null"] },
+    "ts": { "type": "string", "format": "date-time" }
+  }
+}

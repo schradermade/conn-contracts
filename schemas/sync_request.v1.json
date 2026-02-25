@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sync_request.v1",
+  "title": "SyncRequestV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source", "type", "tenant_id"],
+  "properties": {
+    "source": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "enum": ["full_sync", "incremental_sync"] },
+    "tenant_id": { "type": "string", "minLength": 1 },
+    "requested_at": { "type": "string", "format": "date-time" }
+  }
+}
